@@ -1,0 +1,362 @@
+@font-face {
+  font-family: "Figtree";
+  src: url("fonts/figtree-var.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Setting root sizes and base styles.
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+}
+
+// Site-wide base styles.
+body {
+  font-family: "Figtree", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: clamp(22px, 3.5vw, 26px);
+  line-height: 1.5em;
+  font-weight: 450;
+  font-variation-settings: "wght" 450;
+  color: var(--color-bodyText);
+  background: var(--color-background);
+}
+
+// Links.
+a {
+  color: var(--color-bodyText);
+  text-decoration: none;
+  display: inline;
+}
+
+// Styles for typeset text.
+// Nice underlines for text links.
+h1 a,
+p a,
+li a {
+  transition: 0.3s ease;
+  transition-property: all;
+  transition-property: color, box-shadow, opacity;
+  outline: 0;
+  box-shadow: inset 0 -0.55em 0 0 $primaryColour;
+  &:hover,
+  &:active,
+  &:focus {
+    color: var(--color-hover);
+    box-shadow: inset 0 -0.1em 0 0 $primaryColour;
+  }
+}
+
+// Paragraphs. OpenType ligatures and oldstyle figures enabled if available.
+p {
+  margin-bottom: 1.618rem;
+}
+.article-content p {
+  margin-bottom: 3rem;
+}
+
+// Headings. OpenType ligatures, discretionary ligatures and lining figures enabled if available.
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-bodyText);
+  letter-spacing: -1.5px;
+  font-weight: bold;
+  font-weight: 575;
+  font-variation-settings: "wght" 575;
+}
+
+// Heading level 1.
+h1 {
+  color: var(--color-bodyText);
+  font-size: clamp(34px, 8vw, 30px);
+  line-height: 1em;
+  max-width: 25ch;
+  font-weight: 600;
+  font-variation-settings: "wght" 600;
+  margin-bottom: calc(0.5em + 1vh);
+  margin-top: calc(0.5em + 1vh);
+  transition: 0.5s;
+  &.primary {
+    color: $primaryColour;
+  }
+  @media only screen and (min-width: 600px) {
+    font-size: clamp(30px, 8vw, 40px);
+    &.low-top {
+      margin-top: 0;
+      &.article-heading {
+        margin-top: -3rem;
+      }
+    }
+  }
+  @media only screen and (min-width: 1000px) {
+    font-size: clamp(30px, 8vw, 50px);
+  }
+  &.no-bottom {
+    margin-bottom: 0;
+  }
+}
+
+// Heading level 2.
+h2 {
+  font-size: clamp(30px, 8vw, 30px);
+  line-height: 1em;
+  max-width: 25ch;
+  font-weight: 600;
+  font-variation-settings: "wght" 600;
+  margin-bottom: calc(1em + 1vh);
+  transition: 0.5s;
+  @media only screen and (min-width: 600px) {
+    font-size: clamp(30px, 8vw, 40px);
+  }
+  @media only screen and (min-width: 1000px) {
+    font-size: clamp(30px, 8vw, 50px);
+    margin-top: calc(1em + 1vh);
+  }
+}
+
+// Heading level 3.
+h3 {
+  font-size: clamp(16px, 8vw, 30px);
+  margin-top: calc(1.5em + 1vh);
+  margin-bottom: calc(1em + 1vh);
+  @media only screen and (min-width: 600px) {
+    font-size: clamp(30px, 8vw, 36px);
+    margin-top: calc(1.5em + 1vh);
+  }
+}
+
+// Heading level 4.
+h4 {
+}
+
+// Heading level 5.
+h5 {
+}
+
+// Heading level 6.
+h6 {
+}
+
+// Lists.
+ul,
+ol {
+  li {
+    margin-bottom: 1rem;
+    ol,
+    ul {
+      padding-top: 1rem;
+      margin-bottom: 1rem;
+      margin-left: 2rem;
+    }
+  }
+  &.no-bullet {
+    list-style-type: none;
+  }
+}
+
+// Ordered lists.
+ol {
+  list-style-type: none;
+
+  li {
+    counter-increment: top-level;
+
+    &:before {
+      content: counter(top-level) ".";
+      font-feature-settings: "lnum", "tnum";
+      margin-left: -3rem;
+      position: absolute;
+      text-align: right;
+      width: 2em;
+    }
+
+    ul {
+      li {
+        &:before {
+          content: "";
+        }
+
+        ol {
+          li {
+            counter-increment: alt-level;
+
+            &:before {
+              content: counter(alt-level) ".";
+            }
+          }
+        }
+      }
+    }
+
+    ol {
+      li {
+        counter-increment: sub-level;
+
+        &:before {
+          content: counter(top-level) "." counter(sub-level);
+        }
+
+        ul {
+          li {
+            &:before {
+              content: "";
+            }
+          }
+        }
+
+        ol {
+          li {
+            counter-increment: sub-sub-level;
+
+            &:before {
+              content: counter(top-level) "." counter(sub-level) "."
+                counter(sub-sub-level);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Definition lists.
+dl {
+  dt,
+  dd {
+    font-feature-settings: "kern", "onum", "liga";
+    margin-left: 2rem;
+  }
+
+  dt {
+  }
+
+  dd + dt {
+    padding-top: 1rem;
+  }
+}
+
+// Tables.
+table {
+  font-feature-settings: "liga", "lnum", "tnum", "kern";
+  font-style: normal;
+  width: 100%;
+
+  thead {
+    th {
+      padding-bottom: 1px;
+    }
+  }
+}
+
+// Bold.
+b,
+strong,
+.bold {
+  font-weight: bold;
+  font-weight: 600;
+  font-variation-settings: "wght" 600;
+}
+
+// Italic.
+em,
+i,
+.italic {
+  font-style: italic;
+}
+
+// Caption and inline small text.
+small,
+.caption {
+  font-style: normal;
+}
+
+small {
+  line-height: 1rem;
+}
+
+.caption {
+  color: $captionColour;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 1rem;
+}
+
+// Quotes.
+blockquote {
+  padding-left: 1rem;
+  border-left: 6px solid var(--color-bodyText);
+  @extend .bold;
+  p {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+// Horizontal rule.
+hr {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 50%,
+    $captionColour 50%
+  );
+  background-position: 0 50%;
+  background-repeat: repeat-x;
+  background-size: 100% 0.15rem;
+  border: 0;
+  margin: 0;
+  padding-bottom: 3rem;
+  padding-top: 3rem;
+}
+
+// Code block.
+code,
+pre {
+  background-color: $codeBackgroundColour;
+}
+
+pre {
+  display: block;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+code {
+  line-height: 1rem;
+}
+.no-wrap {
+  white-space: nowrap;
+}
+// Letter space those capitals people, Jan Tschichold would be proud.
+.upper {
+  font-kerning: normal;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
+
+// Real small caps.
+.small-caps {
+  font-feature-settings: "smcp", "kern";
+  font-kerning: normal;
+  letter-spacing: 0.1rem;
+}
+
+// Consistent height numbers with OpenType.
+.lining-numerals {
+  font-feature-settings: "lnum", "kern";
+}
+
+// Ascending and descending numbers with OpenType.
+.oldstyle-numerals {
+  font-feature-settings: "onum", "kern";
+}

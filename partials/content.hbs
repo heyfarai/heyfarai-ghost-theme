@@ -1,0 +1,21 @@
+<article class="section--with-grid section--no-padding-top">
+  <div class="section-heading">
+    <h1 class="low-top article-heading no-bottom">{{title}}</h1>
+    <span class="caption">
+      {{#primary_tag}}
+        <a class="post-tag post-tag-{{slug}}" href="{{url}}">
+          {{name}}
+        </a>
+      {{/primary_tag}}
+    </span>
+  </div>
+  <div class="article-content">
+    <span class="caption">{{reading_time}} reading time</span>
+    {{content}}
+    <p class="caption">
+      <time datetime="{{date format="MMMM D, YYYY"}}">
+        {{date published_at}}
+      </time>
+    </p>
+  </div>
+</article>

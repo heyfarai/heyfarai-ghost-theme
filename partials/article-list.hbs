@@ -1,0 +1,8 @@
+{{! This is a partial file used to generate a post "card"
+which templates loop over to generate a list of posts. }}
+
+<ul class="article-list no-bullet">
+  {{#foreach posts}}
+    {{> "article-list-item"}}
+  {{/foreach}}
+</ul>

@@ -1,0 +1,21 @@
+// Text colours. British English.
+$greenColour: rgb(60, 255, 208) !default;
+$redColour: #ff09be !default;
+$purpleColour: #5200ffe6 !default;
+
+$primaryColour: $purpleColour;
+$headingColour: #222222 !default;
+$bodyColour: #222222 !default;
+$linkColour: $bodyColour;
+$hoverColour: $greenColour !default;
+$captionColour: #91979a !default;
+$white: #ffffff !default;
+$black: rgb(19, 19, 19) !default;
+$grey: #383838 !default;
+$lightColor: #ffeff7;
+$darkColor: #3e132a;
+
+// Background colours.
+$lightBackgroundColor: $lightColor;
+$backgroundColour: #fdfdfd !default;
+$codeBackgroundColour: #f5f4f2 !default;

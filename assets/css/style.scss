@@ -1,0 +1,98 @@
+/* CSS compiled from SCSS. */
+/* --------------------------------------- */
+
+// Import Sassline base.
+// @import "sassline-base";
+
+// Import your project SCSS module partials.
+@charset 'UTF-8';
+
+@import "modules/reset.scss";
+@import "modules/variables.scss";
+@import "modules/typography.scss";
+@import "modules/nav.scss";
+@import "modules/grids.scss";
+@import "modules/avatar.scss";
+@import "modules/article.scss";
+@import "modules/button.scss";
+@import "modules/form.scss";
+
+@import "modules/reset.scss";
+
+:root {
+  --color-bodyText: #ffeff7;
+  --color-background: rgb(19, 19, 19);
+  --color-accent: #ff09be;
+  --color-hover: rgb(60, 255, 208);
+}
+
+.firstcharacter {
+  font-size: 1.7rem;
+  line-height: 1.5rem;
+  padding-top: 4px;
+  padding-right: 8px;
+  padding-left: 3px;
+}
+
+.container {
+  padding: 0 2rem 3rem;
+  position: relative;
+}
+@keyframes up {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.errythang {
+  animation-name: up;
+  animation-duration: 400ms;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  animation-delay: 400ms;
+  animation-timing-function: cubic-bezier(0.2, 0, 0.1, 1);
+}
+
+.item-appearance-list,
+.lie-list {
+  position: relative;
+  margin-bottom: 3.5rem;
+  li::before {
+    position: absolute;
+    left: -3ch;
+    content: "○";
+    color: $primaryColour;
+    font-weight: bold;
+  }
+  li {
+    list-style-type: none;
+  }
+}
+
+.intro-blurb {
+  font-size: clamp(34px, 8vw, 30px);
+  font-weight: 500;
+  font-variation-settings: "wght" 500;
+  line-height: 1.3em;
+  max-width: 27ch;
+  margin-top: 3vh;
+  @media only screen and (min-width: 600px) {
+    font-size: clamp(30px, 8vw, 40px);
+  }
+  @media only screen and (min-width: 1000px) {
+    font-size: clamp(30px, 8vw, 50px);
+  }
+}
+.footer {
+  text-align: right;
+  font-size: 0.618em;
+  margin-top: 8vh;
+  padding: 40px 40px 20px;
+  @media only screen and (min-width: 600px) {
+    padding: 50px 50px 20px;
+  }
+}

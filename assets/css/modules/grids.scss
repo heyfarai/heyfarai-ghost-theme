@@ -1,0 +1,75 @@
+// Baseline grid demo styles.
+// ---------------------------------------
+.errythang-grid {
+  display: grid;
+  max-width: 500px;
+  padding: 20px;
+  grid-template-columns: 20px 1fr 20px;
+  justify-content: space-between;
+  margin: 0 auto;
+  position: relative;
+  transition: all 0.5s ease-out;
+  @media only screen and (min-width: 600px) {
+    max-width: none;
+    grid-column-gap: 40px;
+    padding: 50px 50px 0;
+    grid-template-columns: 40px 1fr 40px;
+  }
+  @media only screen and (min-width: 800px) {
+    grid-template-columns: 50px 1fr 50px;
+  }
+  @media only screen and (min-width: 1000px) {
+    grid-template-columns: 50px minmax(auto, 1050px) 50px;
+  }
+}
+
+.section--with-grid,
+.article--with-grid {
+  grid-column: 1/4;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "header header" "content content";
+  margin-bottom: 5vh;
+  padding-top: 6.5vh;
+  @media only screen and (min-width: 600px) {
+    grid-column: 2/4;
+  }
+  @media only screen and (min-width: 800px) {
+    grid-template-areas: "header header" ". content";
+    grid-column: 2/3;
+    grid-template-columns: 1fr minmax(500px, 700px);
+  }
+  &.section--no-padding-top {
+    padding-top: 0;
+  }
+  &.section--wide-content {
+    grid-template-areas: "header header" "content content";
+    &.section--with-subcontent {
+      grid-template-areas: "header header" "content content" ". sub-content";
+    }
+  }
+  &.section--intro {
+    margin-top: 0;
+  }
+}
+.section-heading,
+.article-heading,
+.home-header {
+  grid-column: 1/3;
+  h1 {
+    text-align: left;
+  }
+}
+.section-content,
+.article-content {
+  grid-area: content;
+}
+.article-content {
+  margin-top: 3em;
+}
+.section-subcontent {
+  grid-area: sub-content;
+}
+.home-header {
+  margin: 0;
+}

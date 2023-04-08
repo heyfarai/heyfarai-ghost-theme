@@ -1,0 +1,16 @@
+{{#get "posts" limit="5" filter="id:-{{post.id}}" as |related|}}
+{{#if related}}
+<section class="section--with-grid">
+  <div class="section-heading">
+    <h1 class="low-top article-heading">More articles</h1>
+  </div>
+  <div class="article-content">
+    <ul class="article-list no-bullet">
+        {{#foreach posts}}
+            {{> "article-list-item"}}
+        {{/foreach}}
+    </ul>
+  </div>
+</section>
+{{/if}}
+{{/get}}

@@ -1,0 +1,47 @@
+{{!< default}}
+
+{{!--
+
+There are two error files in this theme, one for 404s and one for all other errors.
+This file is the former, and handles all 404 Page Not Found errors.
+
+The 404 error is the most common error that a visitor might see, for example when
+following a broken link
+
+Keep this template as lightweight as you can!
+
+--}}
+<section class="section--with-grid  section--no-padding-top ">
+    <div class="section-heading">
+        <h1 class="low-top article-heading no-bottom">I can't find that page</h1>
+        <span class="caption">The machines call it a 404. Something went a bit wonky</span>
+        <br>
+
+        <br>
+        <br>
+    </div>
+</section>
+
+<section class="section--with-grid  ">
+    <div class="section-heading">
+        <h1 class="low-top article-heading">Why not try?</h1> 
+    </div>
+    <div class="section-content ">
+        <p>
+            Or, <a class="error-link" href="{{@site.url}}">go to the front page →</a>
+        </p>
+    </div>
+</section>
+
+
+{{!-- Given that people landing on this page didn't find what they
+were looking for, let's give them some alternative stuff to read. --}}
+{{#get "posts" include="authors" limit="3" as |more_posts|}}
+    {{#if more_posts}}
+    <ul class="article-list no-bullet">
+        {{#foreach more_posts}}
+            {{> "article-list-item"}}
+        {{/foreach}}
+        </ul>
+    {{/if}}
+{{/get}}

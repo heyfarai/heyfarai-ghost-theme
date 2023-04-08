@@ -1,0 +1,50 @@
+.nav-wrapper {
+  grid-column: 2/4;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  height: 40px;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 20px;
+  ul li {
+    margin-left: 0.4em;
+  }
+}
+@media only screen and (min-width: 600px) {
+  nav,
+  .nav-wrapper {
+    height: 40px;
+    margin-left: 0;
+  }
+  nav ul li {
+    margin-left: 20px;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  nav,
+  .nav-wrapper {
+    height: 50px;
+  }
+}
+nav ul {
+  display: flex;
+}
+nav ul li {
+  list-style-type: none;
+  a {
+    margin-right: calc(0.05em + 0.1vw);
+    font-size: clamp(20px, 2.5vw, 22px);
+  }
+  margin-top: 0;
+  margin-bottom: 0;
+}
+#the-beginning {
+  margin-bottom: 50px;
+}
+.section-coaching .nav-coaching {
+  box-shadow: none;
+}

@@ -1,0 +1,33 @@
+{{!< default}}
+
+<section class="section--with-grid  section--wide-content">
+    <div class="section-heading">
+        <h1 class="low-top ">Subscribe to my newsletter</h1>
+    </div>
+  <div class="section-content ">
+    <p class="intro-blurb">
+      Every Monday I send out a (literal) letter with 1 people management tip I believe will make you a better manager.
+    </p>
+    <p>It's free. And 100% spam-free. Unsubscribe whenever you want.</p>
+    {{> subscribe-form}}
+
+  </div>
+  </section>
+  <section id="articles" class="section--with-grid">
+
+  <div class="section-content">
+    <h3>What's in it?</h3>
+    <p>I’ll share new and proven people management tips, useful 1:1 conversation techniques, fresh thoughts, and some manager-to-manager #RealTalk—delivered direct from me to your inbox. </p>
+    <p>No B.S. Just useful things you can put into use immediately. </p>
+    <p>It arrives early Monday morning.</p>
+    <div>
+        <h3>Newsletter archive</h3>
+        {{#get "posts" filter="tag:newsletter" limit="all" as |posts|}}
+        {{#if posts}}
+            {{> article-list}}
+        {{/if}}
+        {{/get}}
+    </div>
+  </div>
+</section>
+

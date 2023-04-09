@@ -223,7 +223,7 @@ h6 {
 h1 {
   color: var(--color-bodyText);
   font-size: clamp(34px, 8vw, 30px);
-  line-height: 1em;
+  line-height: 1.31em;
   max-width: 25ch;
   font-weight: 600;
   font-variation-settings: "wght" 600;

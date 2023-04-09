@@ -1,4 +1,4 @@
-{{#get "posts" limit="5" filter="id:-{{post.id}}" as |related|}}
+{{#get "posts" limit="5" filter="tag:-newsletter+id:-{{post.id}}" as |related|}}
 {{#if related}}
 <section class="section--with-grid">
   <div class="section-heading">

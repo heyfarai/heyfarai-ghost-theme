@@ -1,8 +1,12 @@
-.link--button {
+.link--button, .wrapper---discovery-button > .qxCTlb {
+  /* TODO: Get rid of styles to overide Google Schedule form */
   color: #162146;
   background-color: white;
+  font: inherit;
   font-weight: 450;
   border: none;
+  border-radius: 0;
+  letter-spacing: inherit;
   padding: 16px;
   display: inline-block;
 }

@@ -1,14 +1,18 @@
-<link
-  href="https://assets.calendly.com/assets/external/widget.css"
-  rel="stylesheet"
-/>
-<script
-  src="https://assets.calendly.com/assets/external/widget.js"
-  type="text/javascript"
-  async
-></script>
-<a
-  class="link--button"
-  href=""
-  onclick="Calendly.initPopupWidget({url: 'https://calendly.com/farai/coaching-intro?hide_landing_page_details=1&hide_gdpr_banner=1&background_color=ffeff7&text_color=222222&primary_color=5200ff'});return false;"
->Book a free intro call</a>
+<div class="wrapper---discovery-button">
+<link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+<script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+<script>
+(function() {
+  var target = document.currentScript;
+  window.addEventListener('load', function() {
+    calendar.schedulingButton.load({
+      url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ19MguKW8Kaej3wuQI_XUcibxwzP6acbVO7j1lPJ4hf9j7OEZEKzHPoWbWgtAShZxX7QnFNmIKM?gv=true',
+      color: '#ffffff',
+      label: "Let's talk",
+      class: "link--button",
+      target,
+    });
+  });
+})();
+</script>
+</div>

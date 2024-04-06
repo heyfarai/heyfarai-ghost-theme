@@ -10,24 +10,26 @@
   margin-right: 2vh;
   margin-bottom: 1.4vh;
   border-radius: 100px;
-  background-color: var(--color-twelve);
 }
 .subscribe-form button {
   flex: 1 0 auto;
 }
 .subscribe-form input {
-  font-size: 2.2rem;
+  font-size: var(--text-body);
   display: block;
   flex: 1 1 auto;
   box-sizing: border-box;
   max-width: 265px;
   padding: 0 30px;
-  transition: margin-right 0.25s ease;
+  transition: 0.25s ease;
   word-break: normal;
-  border-radius: 100px;
+  background-color: var(--color-bodyText);
+  border: 0;
+  height: 4rem;
 }
 .subscribe-form input:focus {
   margin-right: 10px;
+  max-width: 350px;
 }
 .subscribe-form input::-moz-placeholder {
   opacity: 0.6;
@@ -36,8 +38,8 @@
   opacity: 0.6;
 }
 .subscribe-form-caption {
-  font-size: 1.6rem;
-  line-height: 1.2;
+  font-size: 1rem;
+  line-height: 1.5;
   max-width: 390px;
   margin-bottom: 1.4vh;
   opacity: var(--opacity-one);
@@ -65,9 +67,7 @@
     margin-right: 0;
   }
   .subscribe-form input {
-    font-size: 2.2rem;
     width: 100%;
-    max-width: 230px;
     padding-right: 20px;
     padding-left: 20px;
   }
@@ -81,6 +81,15 @@
   }
 }
 
+.global-alert {
+  font-size: 1rem;
+  display: none;
+  max-width: 420px;
+  padding: 6px 12px;
+  border-radius: 100px;
+  background-color: var(--color-bodyText);
+  color: #777;
+}
 label {
   display: block;
   font-size: 1.4rem;
@@ -106,7 +115,6 @@ textarea {
   color: var(--darker-gray-color);
   background-color: var(--white-color);
   border: 1px solid var(--light-gray-color);
-  border-radius: 5px;
   outline: none;
   appearance: none;
 }

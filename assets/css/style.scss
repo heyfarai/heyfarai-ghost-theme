@@ -7,23 +7,24 @@
 // Import your project SCSS module partials.
 @charset 'UTF-8';
 
-@import "modules/reset.scss";
-@import "modules/variables.scss";
-@import "modules/typography.scss";
-@import "modules/nav.scss";
-@import "modules/grids.scss";
-@import "modules/avatar.scss";
-@import "modules/article.scss";
-@import "modules/button.scss";
-@import "modules/form.scss";
-
-@import "modules/reset.scss";
+@import 'modules/reset.scss';
+@import 'modules/variables.scss';
+@import 'modules/typography.scss';
+@import 'modules/nav.scss';
+@import 'modules/grids.scss';
+@import 'modules/avatar.scss';
+@import 'modules/article.scss';
+@import 'modules/button.scss';
+@import 'modules/form.scss';
 
 :root {
   --color-bodyText: #ffeff7;
   --color-background: rgb(19, 19, 19);
-  --color-accent: #ff09be;
+  --color-accent: #5200ffe6;
   --color-hover: rgb(60, 255, 208);
+  --color-disabled: #747474;
+  --color-dark-gray: #1e1e1f;
+  --text-body: clamp(22px, 3.5vw, 26px);
 }
 
 .firstcharacter {
@@ -64,7 +65,7 @@
   li::before {
     position: absolute;
     left: -3ch;
-    content: "○";
+    content: '○';
     color: $primaryColour;
     font-weight: bold;
   }
@@ -76,7 +77,7 @@
 .intro-blurb {
   font-size: clamp(34px, 8vw, 30px);
   font-weight: 500;
-  font-variation-settings: "wght" 500;
+  font-variation-settings: 'wght' 500;
   line-height: 1.3em;
   max-width: 27ch;
   margin-top: 3vh;

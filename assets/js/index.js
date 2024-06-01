@@ -2,6 +2,7 @@
 
 // Import CSS
 import '../css/style.scss'
+import '../css/index.css'
 
 // Import JS
 import menuOpen from './menuOpen'

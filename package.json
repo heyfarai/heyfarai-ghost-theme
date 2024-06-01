@@ -52,8 +52,8 @@
     }
   },
   "scripts": {
-    "dev": "concurrently \"rollup -c --environment BUILD:development -w\" ",
-    "build": "rollup -c --environment BUILD:production ",
+    "dev": "concurrently \"rollup -c --environment BUILD:development -w\" \"npx tailwindcss -i ./assets/css/index.css -o ./assets/built/index.css --watch\"",
+    "build": "rollup -c --environment BUILD:production && npx tailwindcss -i ./assets/css/index.css -o ./assets/built/index.css --minify",
     "zip": "npm run build && bestzip $npm_package_name.zip assets/* partials/* members/* *.hbs package.json",
     "test": "npx gscan .",
     "pretest": "npm run build"
@@ -69,7 +69,8 @@
     "rollup": "^3.18.0",
     "rollup-plugin-livereload": "^2.0.5",
     "rollup-plugin-postcss": "^4.0.2",
-    "rollup-plugin-scss": "^4.0.0"
+    "rollup-plugin-scss": "^4.0.0",
+    "tailwindcss": "^3.4.3"
   },
   "browserslist": [
     "defaults"

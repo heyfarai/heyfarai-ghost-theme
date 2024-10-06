@@ -51,11 +51,11 @@
       },
       "show_courses_section": {
         "type": "boolean",
-        "default": true
+        "default": false
       },
       "show_book_section": {
         "type": "boolean",
-        "default": true
+        "default": false
       }
     }
   },

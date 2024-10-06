@@ -48,6 +48,14 @@
           "Dark"
         ],
         "default": "Auto"
+      },
+      "show_courses_section": {
+        "type": "boolean",
+        "default": true
+      },
+      "show_book_section": {
+        "type": "boolean",
+        "default": true
       }
     }
   },

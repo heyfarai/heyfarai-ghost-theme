@@ -11,16 +11,21 @@
 <div class="nav-wrapper">
   <nav>
     <ul>
-      <li>
-        <a class="item-link_nav nav-courses" href="/#courses"><span
-            class="no-wrap"
-          >Courses</span></a>
-      </li>
-      <li>
-        <a class="item-link_nav nav-book" href="/book"><span
-            class="no-wrap"
-          >Book</span></a>
-      </li>
+
+      {{#if @custom.show_courses_section}}
+        <li>
+          <a class="item-link_nav nav-courses" href="/#courses"><span
+              class="no-wrap"
+            >Courses</span></a>
+        </li>
+      {{/if}}
+      {{#if @custom.show_book_section}}
+        <li>
+          <a class="item-link_nav nav-book" href="/book"><span
+              class="no-wrap"
+            >Book</span></a>
+        </li>
+      {{/if}}
       <li>
         <a class="item-link_nav nav-coaching" href="/coaching"><span
             class="no-wrap"

@@ -40,15 +40,6 @@
     },
     "card_assets": true,
     "custom": {
-      "color_scheme": {
-        "type": "select",
-        "options": [
-          "Auto",
-          "Light",
-          "Dark"
-        ],
-        "default": "Auto"
-      },
       "show_courses_section": {
         "type": "boolean",
         "default": false

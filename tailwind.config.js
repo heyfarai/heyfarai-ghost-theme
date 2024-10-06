@@ -1,7 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./*.hbs', './**/*.hbs'],
+  content: ["./*.hbs", "./**/*.hbs"],
   theme: {
     extend: {},
   },
-}
+  plugins: [
+    require("@tailwindcss/aspect-ratio"),
+    // ...
+  ],
+};

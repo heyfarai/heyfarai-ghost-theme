@@ -61,6 +61,7 @@
   "devDependencies": {
     "@babel/core": "^7.21.0",
     "@babel/preset-env": "^7.20.2",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
     "bestzip": "^2.2.1",
     "concurrently": "^8.2.2",
     "postcss": "^8.4.24",
